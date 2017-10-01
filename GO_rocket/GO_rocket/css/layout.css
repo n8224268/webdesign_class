@@ -1,0 +1,93 @@
+header{
+	height: 50px;
+	background-color: rgba(256,256,256,0.2);
+	box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+	z-index: 20;
+}
+header ul{
+	float: right;
+	margin-top: 16px;
+	margin-right: 40px;
+}
+header ul li{
+	float: left;
+}
+header ul li a{
+	color: #fff;
+	text-decoration: none;
+	font-family: 20px;
+	font-family: 微軟正黑體;
+	margin-left: 40px;
+}
+.layer{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.clouds{
+	/*display: none;*/
+}
+.stars{
+	/*display: none;*/
+}
+.plannets{
+	/*display: none;*/
+}
+.goRocket{
+	/*display: none;*/
+}
+/* Clouds */
+.cloud_left{top: 68%;left: 5%;}
+.cloud_right{top: 20%;left: 62%;}
+/* Star */
+.star.p1{left: 27%;top: 11.6%;}
+.star.p2{left: 35%;top: 12.6%;}
+.star.p3{left: 38%;top: 9.3%;}
+.star.p4{left: 69.5%;top: 9.3%;}
+.star.p5{left: 31.4%;top: 20%;}
+.star.p6{left: 95%;top: 62%;}
+.star.p7{left: 24%;top: 82.1%;}
+.star.p8{left: 20%;top: 90.3%;}
+.star.p9{left: 30%;top: 92.7%;}
+/* plannet */
+.plannetLg{
+	top: 33%;
+	left: 10.4%;
+}
+.plannetSm{
+	top: 57.6%;
+	left: 71%;
+}
+/* GoRocket */
+.flyGroup{
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+}
+.rocket{
+	top: 73%;
+	left: 50%;
+	transform: translate(-50%,-100%);
+}
+.getOn{
+	width: 200px;
+	position: absolute;
+	top: 18%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.getOn img{
+	width: 100%;
+}
+.flame.p1{left: 29%;top: 65%;}
+.flame.p2{left: 51%;top: 68%;}
+.flame.p3{left: 42%;top: 68%;}
+.flame.p4{left: 29%;top: 65%;}
+.flame.p5{left: 51%;top: 68%;}
+.flame.p6{left: 42%;top: 81%;}
+.flame.p7{left: 23%;top: 80%;}
+.flame.p8{left: 71.5%;top: 75%;}
+.flame.p9{left: 32%;top: 66%;}
+.flame.p10{left: 110%;top: 60%;}

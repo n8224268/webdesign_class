@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=0">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/element.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/animation.css">
+</head>
+<body>
+	<div class="wrapper">
+		<!-- Start Header -->
+		<header>
+			<ul>
+				<li><a href="#!">首頁</a></li>
+				<li><a href="#!">關於我們</a></li>
+			</ul>
+		</header>
+		<!-- End Header -->
+		<div class="BG"></div>
+		<!-- Start Layer 1 -->
+		<div class="clouds layer">
+			<img class="cloud cloud_left" src="images/cloud_left.svg" alt="">
+			<img class="cloud cloud_right" src="images/cloud_right.svg" alt="">
+		</div>
+		<!-- End Layer 1 -->
+
+		<!-- Start Layer 2 -->
+		<div class="stars layer">
+			<div class="star star_so starLg p1"></div>
+			<div class="star star_so starSm p2"></div>
+			<div class="star star_fr p3"></div>
+			<div class="star star_so starSm p4"></div>
+			<div class="star star_so starSm p5"></div>
+			<div class="star star_so starMd p6"></div>
+			<div class="star star_fr p7"></div>
+			<div class="star star_so starSm p8"></div>
+			<div class="star star_so starSm p9"></div>
+		</div>
+		<!-- End Layer 2 -->
+
+		<!-- Start Layer 3 -->
+		<div class="plannets layer">
+			<div class="plannet plannetLg">
+				<div class="inner">
+					<div class="layer_white center"></div>
+					<div class="layer_purple center"></div>
+					<div class="layer_light_purple center"></div>
+					<div class="layer_orange center">
+						<div class="dot dotLg"></div>
+						<div class="dot dotMd p1"></div>
+						<div class="dot dotMd p2"></div>
+						<div class="dot dotSm p1"></div>
+						<div class="dot dotSm p2"></div>
+					</div>
+				</div>
+			</div>
+			<div class="plannet plannetSm">
+				<div class="inner">
+					<div class="layer_white center"></div>
+					<div class="layer_purple center"></div>
+					<div class="layer_light_purple center"></div>
+					<div class="layer_orange center">
+						<div class="dot dotLg"></div>
+						<div class="dot dotMd p1"></div>
+						<div class="dot dotMd p2"></div>
+						<div class="dot dotSm p1"></div>
+						<div class="dot dotSm p2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Layer 3 -->
+
+		<!-- Start Layer 4 -->
+		<div class="outerFrame">
+			<div id="mobile_ref"></div>
+			<div class="goRocket layer">
+				<div class="flyGroup">
+					<div class="flame flame_full_orange p3"></div>
+					<div class="flame flame_op_orange_th p4"></div>
+					<div class="flame flame_op_orange_th p5"></div>
+					<div class="flame flame_egg_yellow p1"></div>
+					<div class="flame flame_egg_yellow p2"></div>
+					<div class="flame flame_op_orange_sl p6"></div>
+					<div class="flame flame_light_orange_Sm p7"></div>
+					<div class="flame flame_light_orange_Sm p8"></div>
+					<div class="flame flame_light_orange_Md p9"></div>
+					<img src="images/rocket.svg" alt="" class="rocket">
+				</div>
+				<div class="getOn">
+					<img src="images/geton.svg" alt="">
+				</div>
+			</div>
+		</div>
+		<!-- End Layer 4 -->
+		
+	</div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+<script>
+setInterval(movePlane, 120);
+var keys = {}
+$(document).keydown(function(e) {
+    keys[e.keyCode] = true;
+});
+$(document).keyup(function(e) {
+    delete keys[e.keyCode];
+});
+if($(window).width() < 768){
+	$(document).ready(function(){
+		var container = $('.outerFrame'),
+		scrollTo = $('#mobile_ref');
+
+		container.animate({
+		scrollLeft: scrollTo.offset().left - container.offset().left + container.scrollTop()
+		},0);
+	});
+}
+function movePlane() {
+	for (var direction in keys) {
+		position = $(".flyGroup").position();
+		windowWidth = window.outerWidth;
+		rocketWidth = $(".rocket").width();
+		function leftToCenter(){
+			$(".flyGroup").addClass("rocketRotateCenter");
+			$(".flyGroup").removeClass("rocketRotateLeft");
+		}
+		function rightToCenter(){
+			$(".flyGroup").addClass("rocketRotateCenter");
+			$(".flyGroup").removeClass("rocketRotateRight");
+		}
+		$(".flyGroup").addClass("rocketRotateCenter");
+
+		if (!keys.hasOwnProperty(direction)) continue;
+		// key left
+		if (direction == 37 && position.left > 0) {
+			$(".flyGroup").animate({left: "-=100"}, 0);
+			$(".flyGroup").addClass("rocketRotateLeft");
+			$(".flyGroup").removeClass("rocketRotateRight");
+			$(".flyGroup").removeClass("rocketRotateCenter");
+			setTimeout(leftToCenter, 100);
+		}
+		// key right
+		if (direction == 39 && position.left < windowWidth - rocketWidth) {
+			$(".flyGroup").animate({left: "+=100"}, 0);
+			$(".flyGroup").addClass("rocketRotateRight");
+			$(".flyGroup").removeClass("rocketRotateLeft");
+			$(".flyGroup").removeClass("rocketRotateCenter");
+			setTimeout(rightToCenter, 100);
+		}
+		// console.log(position.left,windowWidth,rocketWidth);
+
+	}
+}
+</script>

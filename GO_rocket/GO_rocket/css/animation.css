@@ -1,0 +1,234 @@
+/* Clouds */
+.cloud_left{
+	animation: cloud_left_fly 30s linear infinite backwards;
+}
+@keyframes cloud_left_fly{
+	0%{left: -47%;}
+	100%{left: 100%;}
+}
+.cloud_right{
+	animation: cloud_left_fly 30s -15s linear infinite;
+}
+@keyframes cloud_left_fly{
+	0%{left: -47%;}
+	100%{left: 100%;}
+}
+/* Stars */
+.star.p1{left: 65%;animation: starFall 5s 5.5s linear infinite backwards;}
+.star.p2{animation: starFall 5s 5s linear infinite backwards;}
+.star.p3{left: 80%; animation: starFall 5s 7s linear infinite backwards;}
+.star.p4{animation: starFall 5s 9.2s linear infinite backwards;}
+.star.p5{left: 10%;animation: starFall 5s 8.4s linear infinite backwards;}
+.star.p6{animation: starFall 5s 6.5s linear infinite backwards;}
+.star.p7{left: 15%;animation: starFall 5s 6s linear infinite backwards;}
+.star.p8{animation: starFall 5s 8s linear infinite backwards;}
+.star.p9{animation: starFall 5s 9s linear infinite backwards;}
+@keyframes starFall{
+	0%{top: -50px;}
+	100%{top: 100%;}
+}
+/* plannet */
+.plannetLg{
+	animation: plannetDownLg 2.5s 7.5s linear infinite both;
+}
+@keyframes plannetDownLg{
+	0%{top: -24.8vw;transform: rotate(0deg);}
+	100%{top: 100%;transform: rotate(360deg);}
+}
+.plannetSm{
+	animation: plannetDownSm 2.5s 6s linear infinite both;
+}
+@keyframes plannetDownSm{
+	0%{top: -15.6vw;transform: rotate(0deg);}
+	100%{top: 100%;transform: rotate(360deg);}
+}
+.layer_white{
+	animation: getLarge 1s infinite;
+}
+@keyframes getLarge{
+	0%{transform: translate(-50%,-50%) scale(1);}
+	50%{transform: translate(-50%,-50%) scale(1.1);}
+	100%{transform: translate(-50%,-50%) scale(1);}
+}
+/* goRocket */
+.flyGroup{
+	animation: flyShake 1s infinite;
+}
+@keyframes flyShake{
+	0%{left: 49.5%;}
+	50%{left: 50.5%;}
+	100%{left: 49.5%;}
+}
+/* Flames */
+.flame.p1{animation: flameP1 0.3s linear infinite;}
+@keyframes flameP1{
+	0%{height: 5%;top: 65%;}
+	60%{height: 40%}
+	90%{opacity: 0.8;}
+	100%{height: 40%;top: 100%;opacity: 0.3}
+}
+.flame.p2{animation: flameP2 0.4s -0.3s linear infinite;}
+@keyframes flameP2{
+	0%{height: 5%;top: 65%;}
+	60%{height: 40%}
+	90%{opacity: 0.8;}
+	100%{height: 40%;top: 100%;opacity: 0.3}
+}
+.flame.p3{animation: flameP3 0.3s -0.3s linear infinite;}
+@keyframes flameP3{
+	0%{height: 5%;top: 65%;}
+	60%{height: 25%}
+	90%{opacity: 0.8;}
+	100%{height: 25%;top: 100%;opacity: 0.3}
+}
+.flame.p4{animation: flameP4 0.4s -0.3s linear infinite;}
+@keyframes flameP4{
+	0%{height: 10%;top: 65%;}
+	60%{height: 50%}
+	90%{opacity: 0.8;}
+	100%{height: 50%;top: 100%;opacity: 0.3}
+}
+.flame.p5{animation: flameP5 0.3s -0.4s linear infinite;}
+@keyframes flameP5{
+	0%{height: 10%;top: 65%;}
+	60%{height: 50%}
+	90%{opacity: 0.8;}
+	100%{height: 50%;top: 100%;opacity: 0.3}
+}
+.flame.p6{animation: flameP6 0.4s -0.5s linear infinite;}
+@keyframes flameP6{
+	0%{height: 10%;top: 65%;}
+	60%{height: 50%}
+	90%{opacity: 0.8;}
+	100%{height: 50%;top: 100%;opacity: 0.3}
+}
+.flame.p7{animation: flameP7 0.3s -0.3s linear infinite;}
+@keyframes flameP7{
+	0%{height: 1%;top: 65%;}
+	90%{opacity: 1;}
+	100%{height: 8.6%;top: 100%;opacity: 0.3}
+}
+.flame.p8{animation: flameP8 0.4s linear infinite;}
+@keyframes flameP8{
+	0%{height: 1%;top: 65%;}
+	90%{opacity: 1;}
+	100%{height: 8.6%;top: 100%;opacity: 0.3;}
+}
+.flame.p9{animation: flameP9 0.3s -0.2s linear infinite;}
+@keyframes flameP9{
+	0%{height: 1%;top: 65%;}
+	90%{opacity: 1;}
+	100%{height: 13%;top: 100%;opacity: 0.3;}
+}
+/* Rocket vertical_shake */
+.rocket{
+	animation: ver_shake 0.5s 1.5s linear infinite;
+}
+@keyframes ver_shake{
+	0%{transform: translate(-50%,-100%);}
+	50%{transform: translate(-50%,-103%);}
+	100%{transform: translate(-50%,-100%);}
+}
+/* Launch */
+.flyGroup{
+	top: 27%;
+	animation: 
+		getPower 1s 0.5s ease,
+		launch 1s 1.8s linear forwards
+}
+@keyframes getPower{
+	0%{left: 50%;}
+	10%{left: 51%;}
+	20%{left: 49.9%;}
+	30%{left: 51%;}
+	40%{left: 49.9%;}
+	50%{left: 51%;}
+	60%{left: 49.9%;}
+	70%{left: 51%;}
+	80%{left: 49.9%;}
+	90%{left: 51%;}
+	100%{left: 50%;}
+}
+@keyframes launch{
+	0%{top: 27%;}
+	100%{top: 0%;}
+}
+/* Bg_change */
+.BG{
+	animation: skyShift 5s 2s linear both;
+}
+@keyframes skyShift{
+	0%{top: -100%;}
+	100%{top: 0%;}
+}
+/* cloudDown */
+.clouds{
+	animation: cloudDown 35s 3s linear both infinite;
+}
+@keyframes cloudDown{
+	0%{top: -100%;}
+	100%{top: 100%;}
+}
+.getOn{
+	animation: alert 2s both,
+	breath 1.5s 2s infinite;
+}
+@keyframes alert{
+	10%{opacity: 1;top: 40%;}
+	20%{opacity: 0;}
+	30%{opacity: 1;}
+	40%{opacity: 0;}
+	50%{opacity: 1;}
+	60%{opacity: 0;}
+	70%{opacity: 1;}
+	80%{top: 40%;}
+}
+@keyframes breath{
+	0%{opacity: 1}
+	50%{opacity: 0.5}
+	100%{opacity: 1}
+}
+.flyGroup{
+	transition: all 0.3s;
+}
+/*.flyGroup:hover{
+	transform: translateX(-50%) scale(1.05);
+}*/
+
+
+/* for 操作 */
+.rocketRotateRight{
+	transform: rotate(10deg);
+}
+.rocketRotateLeft{
+	transform: rotate(-10deg);
+}
+.rocketRotateCenter{
+	transform: rotate(0deg);
+}
+
+/* mobile drag */
+@media screen and (max-width:768px){
+	.outerFrame{
+		height: 100vh;
+		overflow-x: scroll;
+	}
+	::-webkit-scrollbar{
+		display: none;
+	}
+	.goRocket{
+		width: 200vw;
+		height: 100%;
+		margin: 0 auto;
+	}
+	.flyGroup{
+		width: 20vw;
+	}
+	.getOn{
+		position: fixed;
+	}
+	#mobile_ref{
+		position: absolute;
+		left: 50%;
+	}
+}
